@@ -1,0 +1,194 @@
+export type Language = "en" | "da"
+
+export const translations = {
+  en: {
+    common: {
+      title: "ClassroomFlow",
+      createRoom: "Create Room",
+      viewRooms: "View Rooms",
+      importRoom: "Import Room",
+      exportRoom: "Export Room",
+      printRoom: "Print Room",
+      save: "Save",
+      cancel: "Cancel",
+      loading: "Loading...",
+      noRooms: "You haven't created any rooms yet.",
+      createFirstRoom: "Create Your First Room",
+      shareRoom: "Share Room",
+      shareLinkDescription: "Share this room with your students",
+      copyLink: "Copy Link",
+      linkCopied: "Link copied to clipboard",
+      uploadJson: "Click to upload JSON file",
+      roomImported: "Room imported successfully",
+      errorImporting: "Error importing room",
+      invalidFile: "The file format is invalid. Please upload a valid JSON file.",
+    },
+    home: {
+      headline: "Simple Classroom Project Management",
+      subheadline:
+        "Create project rooms, assign tasks, and share with your students. Track progress and collaborate effectively.",
+      createNewRoom: "Create New Room",
+      keyFeatures: "Key Features",
+      keyFeaturesSubtitle: "Everything you need for classroom project management",
+
+      // Easy Task Management
+      easyTaskManagement: "Easy Task Management",
+      easyTaskManagementDesc: "Create and organize tasks with deadlines and progress tracking",
+      easyTaskManagementDetail:
+        "Easily create checkbox tasks or text field tasks with character requirements. Track progress automatically.",
+
+      // Simple Sharing
+      simpleSharing: "Simple Sharing",
+      simpleSharingDesc: "Share project rooms with students via unique links",
+      simpleSharingDetail:
+        "Generate shareable links that give students access to view and interact with project rooms.",
+
+      // Progress Tracking
+      progressTracking: "Progress Tracking",
+      progressTrackingDesc: "Monitor student progress in real-time",
+      progressTrackingDetail: "See which tasks are completed and track overall progress for each project room.",
+
+      // Card descriptions
+      importRoomDesc: "Upload a previously exported room JSON file",
+      viewRoomsDesc: "Access your existing project rooms",
+    },
+    createRoom: {
+      title: "Create New Room",
+      description: "Set up a new project room for your students",
+      roomTitle: "Title",
+      roomTitlePlaceholder: "Enter room title",
+      roomDescription: "Description",
+      roomDescriptionPlaceholder: "Enter room description",
+      deadline: "Deadline",
+      selectDate: "Select a date",
+      subTasks: "Sub-tasks",
+      addSubTask: "Add a sub-task",
+      noSubTasks: "No sub-tasks added yet",
+      missingTitle: "Missing title",
+      pleaseEnterTitle: "Please enter a title for the room.",
+      missingDeadline: "Missing deadline",
+      pleaseSelectDeadline: "Please select a deadline for the room.",
+      roomCreated: "Room created",
+      roomCreatedSuccess: "Your room has been created successfully.",
+    },
+    rooms: {
+      title: "Project Rooms",
+      progress: "Progress",
+      due: "Due",
+      viewRoom: "View Room",
+    },
+    room: {
+      roomDetails: "Room Details",
+      overallProgress: "Overall Progress",
+      subTasks: "Sub-tasks",
+      completed: "completed",
+      addNewSubTask: "Add a new sub-task",
+      shareableLink: "Shareable Link",
+      studentViewDescription: "Students can view and track progress but cannot modify the room structure.",
+      textFieldTask: "Text Field Task",
+      requiredCharacters: "Required characters",
+      characterCount: "Character count",
+      textFieldPlaceholder: "Start writing here...",
+    },
+    studentView: {
+      description: "Description",
+      tasks: "Tasks",
+      completed: "completed",
+      complete: "Complete",
+    },
+  },
+  da: {
+    common: {
+      title: "ClassroomFlow",
+      createRoom: "Opret Rum",
+      viewRooms: "Se Rum",
+      importRoom: "Importer Rum",
+      exportRoom: "Eksporter Rum",
+      printRoom: "Udskriv Rum",
+      save: "Gem",
+      cancel: "Annuller",
+      loading: "Indlæser...",
+      noRooms: "Du har ikke oprettet nogen rum endnu.",
+      createFirstRoom: "Opret Dit Første Rum",
+      shareRoom: "Del Rum",
+      shareLinkDescription: "Del dette rum med dine elever",
+      copyLink: "Kopier Link",
+      linkCopied: "Link kopieret til udklipsholder",
+      uploadJson: "Klik for at uploade JSON-fil",
+      roomImported: "Rum importeret med succes",
+      errorImporting: "Fejl ved import af rum",
+      invalidFile: "Filformatet er ugyldigt. Upload venligst en gyldig JSON-fil.",
+    },
+    home: {
+      headline: "Simpel Projektstyring til Klasseværelset",
+      subheadline: "Opret projektrum, tildel opgaver og del med dine elever. Følg fremskridt og samarbejd effektivt.",
+      createNewRoom: "Opret Nyt Rum",
+      keyFeatures: "Nøglefunktioner",
+      keyFeaturesSubtitle: "Alt hvad du behøver til projektstyring i klasseværelset",
+
+      // Easy Task Management
+      easyTaskManagement: "Nem Opgavestyring",
+      easyTaskManagementDesc: "Opret og organiser opgaver med deadlines og fremskridtssporing",
+      easyTaskManagementDetail:
+        "Opret nemt afkrydsningsopgaver eller tekstfeltopgaver med tegnkrav. Spor fremskridt automatisk.",
+
+      // Simple Sharing
+      simpleSharing: "Enkel Deling",
+      simpleSharingDesc: "Del projektrum med elever via unikke links",
+      simpleSharingDetail: "Generer delbare links, der giver elever adgang til at se og interagere med projektrum.",
+
+      // Progress Tracking
+      progressTracking: "Fremskridtssporing",
+      progressTrackingDesc: "Overvåg elevernes fremskridt i realtid",
+      progressTrackingDetail: "Se hvilke opgaver der er fuldført, og spor det samlede fremskridt for hvert projektrum.",
+
+      // Card descriptions
+      importRoomDesc: "Upload en tidligere eksporteret rum JSON-fil",
+      viewRoomsDesc: "Få adgang til dine eksisterende projektrum",
+    },
+    createRoom: {
+      title: "Opret Nyt Rum",
+      description: "Opsæt et nyt projektrum til dine elever",
+      roomTitle: "Titel",
+      roomTitlePlaceholder: "Indtast rummets titel",
+      roomDescription: "Beskrivelse",
+      roomDescriptionPlaceholder: "Indtast rummets beskrivelse",
+      deadline: "Deadline",
+      selectDate: "Vælg en dato",
+      subTasks: "Delopgaver",
+      addSubTask: "Tilføj en delopgave",
+      noSubTasks: "Ingen delopgaver tilføjet endnu",
+      missingTitle: "Manglende titel",
+      pleaseEnterTitle: "Indtast venligst en titel til rummet.",
+      missingDeadline: "Manglende deadline",
+      pleaseSelectDeadline: "Vælg venligst en deadline for rummet.",
+      roomCreated: "Rum oprettet",
+      roomCreatedSuccess: "Dit rum er blevet oprettet med succes.",
+    },
+    rooms: {
+      title: "Projektrum",
+      progress: "Fremskridt",
+      due: "Forfalder",
+      viewRoom: "Se Rum",
+    },
+    room: {
+      roomDetails: "Rumdetaljer",
+      overallProgress: "Samlet Fremskridt",
+      subTasks: "Delopgaver",
+      completed: "fuldført",
+      addNewSubTask: "Tilføj en ny delopgave",
+      shareableLink: "Delbart Link",
+      studentViewDescription: "Elever kan se og følge fremskridt, men kan ikke ændre rummets struktur.",
+      textFieldTask: "Tekstfeltopgave",
+      requiredCharacters: "Påkrævede tegn",
+      characterCount: "Antal tegn",
+      textFieldPlaceholder: "Begynd at skrive her...",
+    },
+    studentView: {
+      description: "Beskrivelse",
+      tasks: "Opgaver",
+      completed: "fuldført",
+      complete: "Fuldført",
+    },
+  },
+}
