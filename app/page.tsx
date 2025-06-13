@@ -126,19 +126,19 @@ export default function Home() {
                     <div className="rounded-md bg-primary p-1 text-primary-foreground">
                       <BookOpen className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold">{t("rooms.title")}</h3>
+                    <h3 className="font-semibold">Project Room</h3>
                   </div>
                   <div className="flex-1 space-y-3">
                     <div className="h-8 bg-blue-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">{t("room.subTasks")} 1</span>
+                      <span className="w-1/3">Task 1</span>
                       <span className="ml-auto">June 15</span>
                     </div>
                     <div className="h-8 bg-green-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">{t("room.subTasks")} 2</span>
+                      <span className="w-1/3">Task 2</span>
                       <span className="ml-auto">June 22</span>
                     </div>
                     <div className="h-8 bg-yellow-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">{t("room.subTasks")} 3</span>
+                      <span className="w-1/3">Task 3</span>
                       <span className="ml-auto">June 29</span>
                     </div>
                   </div>
@@ -159,8 +159,8 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold tracking-tight">{t("home.keyFeatures")}</h2>
-            <p className="text-muted-foreground mt-2">{t("home.featuresDescription")}</p>
+            <h2 className="text-3xl font-bold tracking-tight">Key Features</h2>
+            <p className="text-muted-foreground mt-2">Everything you need for classroom project management</p>
           </motion.div>
 
           <motion.div
@@ -176,11 +176,14 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-2">
                     <CheckCircle className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>{t("home.easyTaskManagement")}</CardTitle>
-                  <CardDescription>{t("home.easyTaskManagementDesc")}</CardDescription>
+                  <CardTitle>Easy Task Management</CardTitle>
+                  <CardDescription>Create and organize tasks with deadlines and progress tracking</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.easyTaskManagementDetails")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Easily create checkbox tasks or text field tasks with character requirements. Track progress
+                    automatically.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -191,11 +194,13 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-2">
                     <Share2 className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>{t("home.simpleSharing")}</CardTitle>
-                  <CardDescription>{t("home.simpleSharingDesc")}</CardDescription>
+                  <CardTitle>Simple Sharing</CardTitle>
+                  <CardDescription>Share project rooms with students via unique links</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.simpleSharingDetails")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Generate shareable links that give students access to view and interact with project rooms.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -206,11 +211,13 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-2">
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>{t("home.progressTracking")}</CardTitle>
-                  <CardDescription>{t("home.progressTrackingDesc")}</CardDescription>
+                  <CardTitle>Progress Tracking</CardTitle>
+                  <CardDescription>Monitor student progress in real-time</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.progressTrackingDetails")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    See which tasks are completed and track overall progress for each project room.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -244,7 +251,7 @@ export default function Home() {
               <Card className="card-hover card-gradient">
                 <CardHeader>
                   <CardTitle>{t("common.importRoom")}</CardTitle>
-                  <CardDescription>{t("home.importRoomDesc")}</CardDescription>
+                  <CardDescription>Upload a previously exported room JSON file</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-col items-center gap-4">
@@ -271,7 +278,7 @@ export default function Home() {
               <Card className="card-hover card-gradient">
                 <CardHeader>
                   <CardTitle>{t("common.viewRooms")}</CardTitle>
-                  <CardDescription>{t("home.viewRoomsDesc")}</CardDescription>
+                  <CardDescription>Access your existing project rooms</CardDescription>
                 </CardHeader>
                 <CardContent className="flex justify-center">
                   <Button variant="outline" asChild className="gap-2 shadow-sm">

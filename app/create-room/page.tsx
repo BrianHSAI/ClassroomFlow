@@ -16,7 +16,6 @@ import { cn } from "@/lib/utils"
 import { useToast } from "@/components/ui/use-toast"
 import { useLanguage } from "@/lib/i18n/language-context"
 import type { SubTask } from "@/lib/types"
-import { motion } from "framer-motion"
 
 export default function CreateRoomPage() {
   const [title, setTitle] = useState("")
@@ -100,138 +99,126 @@ export default function CreateRoomPage() {
 
   return (
     <div className="container py-8">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <Card className="max-w-2xl mx-auto card-gradient shadow-md">
-          <CardHeader>
-            <CardTitle>{t("createRoom.title")}</CardTitle>
-            <CardDescription>{t("createRoom.description")}</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="title">{t("createRoom.roomTitle")}</Label>
-              <Input
-                id="title"
-                placeholder={t("createRoom.roomTitlePlaceholder")}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="focus:ring-2 focus:ring-primary focus:ring-offset-1"
-              />
-            </div>
+      <Card className="max-w-2xl mx-auto">
+        <CardHeader>
+          <CardTitle>{t("createRoom.title")}</CardTitle>
+          <CardDescription>{t("createRoom.description")}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="title">{t("createRoom.roomTitle")}</Label>
+            <Input
+              id="title"
+              placeholder={t("createRoom.roomTitlePlaceholder")}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="description">{t("createRoom.roomDescription")}</Label>
-              <Textarea
-                id="description"
-                placeholder={t("createRoom.roomDescriptionPlaceholder")}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                rows={4}
-                className="resize-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
-              />
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="description">{t("createRoom.roomDescription")}</Label>
+            <Textarea
+              id="description"
+              placeholder={t("createRoom.roomDescriptionPlaceholder")}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={4}
+            />
+          </div>
 
-            <div className="space-y-2">
-              <Label>{t("createRoom.deadline")}</Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn("w-full justify-start text-left font-normal", !date && "text-muted-foreground")}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {date ? format(date, "PPP") : t("createRoom.selectDate")}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
-                </PopoverContent>
-              </Popover>
-            </div>
+          <div className="space-y-2">
+            <Label>{t("createRoom.deadline")}</Label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className={cn("w-full justify-start text-left font-normal", !date && "text-muted-foreground")}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {date ? format(date, "PPP") : t("createRoom.selectDate")}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
+              </PopoverContent>
+            </Popover>
+          </div>
 
-            <div className="space-y-4">
-              <Label>{t("createRoom.subTasks")}</Label>
-              <div className="flex flex-col gap-4">
-                <div className="flex gap-2">
-                  <Select value={newTaskType} onValueChange={(value) => setNewTaskType(value as "checkbox" | "text")}>
-                    <SelectTrigger className="w-[120px]">
-                      <SelectValue placeholder={t("common.taskType")} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="checkbox">{t("common.checkbox")}</SelectItem>
-                      <SelectItem value="text">{t("common.textField")}</SelectItem>
-                    </SelectContent>
-                  </Select>
+          <div className="space-y-4">
+            <Label>{t("createRoom.subTasks")}</Label>
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-2">
+                <Select value={newTaskType} onValueChange={(value) => setNewTaskType(value as "checkbox" | "text")}>
+                  <SelectTrigger className="w-[120px]">
+                    <SelectValue placeholder="Task Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="checkbox">Checkbox</SelectItem>
+                    <SelectItem value="text">Text Field</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Input
+                  placeholder={t("createRoom.addSubTask")}
+                  value={newSubTask}
+                  onChange={(e) => setNewSubTask(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleAddSubTask()
+                    }
+                  }}
+                  className="flex-1"
+                />
+                <Button type="button" onClick={handleAddSubTask}>
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+
+              {newTaskType === "text" && (
+                <div className="flex items-center gap-2">
+                  <Label htmlFor="requiredChars" className="whitespace-nowrap">
+                    {t("room.requiredCharacters")}:
+                  </Label>
                   <Input
-                    placeholder={t("createRoom.addSubTask")}
-                    value={newSubTask}
-                    onChange={(e) => setNewSubTask(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        handleAddSubTask()
-                      }
-                    }}
-                    className="flex-1 focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                    id="requiredChars"
+                    type="number"
+                    min="1"
+                    value={requiredCharacters}
+                    onChange={(e) => setRequiredCharacters(Number.parseInt(e.target.value) || 100)}
+                    className="w-24"
                   />
-                  <Button type="button" onClick={handleAddSubTask} className="shadow-sm">
-                    <Plus className="h-4 w-4" />
-                  </Button>
                 </div>
-
-                {newTaskType === "text" && (
-                  <div className="flex items-center gap-2">
-                    <Label htmlFor="requiredChars" className="whitespace-nowrap">
-                      {t("room.requiredCharacters")}:
-                    </Label>
-                    <Input
-                      id="requiredChars"
-                      type="number"
-                      min="1"
-                      value={requiredCharacters}
-                      onChange={(e) => setRequiredCharacters(Number.parseInt(e.target.value) || 100)}
-                      className="w-24 focus:ring-2 focus:ring-primary focus:ring-offset-1"
-                    />
-                  </div>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                {subTasks.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">{t("createRoom.noSubTasks")}</p>
-                ) : (
-                  <div className="space-y-2">
-                    {subTasks.map((task, index) => (
-                      <motion.div
-                        key={task.id}
-                        className="flex items-center justify-between p-2 border rounded-md card-hover"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.05 * index }}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span>{task.title}</span>
-                          {task.type === "text" && (
-                            <span className="text-xs bg-muted px-2 py-1 rounded-md">
-                              {t("room.requiredCharacters")}: {task.requiredCharacters}
-                            </span>
-                          )}
-                        </div>
-                        <Button variant="ghost" size="icon" onClick={() => handleRemoveSubTask(task.id)}>
-                          <Trash className="h-4 w-4" />
-                        </Button>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
-          </CardContent>
-          <CardFooter>
-            <Button onClick={handleCreateRoom} className="w-full button-gradient shadow-md">
-              {t("common.createRoom")}
-            </Button>
-          </CardFooter>
-        </Card>
-      </motion.div>
+
+            <div className="space-y-2">
+              {subTasks.length === 0 ? (
+                <p className="text-sm text-muted-foreground">{t("createRoom.noSubTasks")}</p>
+              ) : (
+                subTasks.map((task) => (
+                  <div key={task.id} className="flex items-center justify-between p-2 border rounded-md">
+                    <div className="flex items-center gap-2">
+                      <span>{task.title}</span>
+                      {task.type === "text" && (
+                        <span className="text-xs bg-muted px-2 py-1 rounded-md">
+                          {t("room.requiredCharacters")}: {task.requiredCharacters}
+                        </span>
+                      )}
+                    </div>
+                    <Button variant="ghost" size="icon" onClick={() => handleRemoveSubTask(task.id)}>
+                      <Trash className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button onClick={handleCreateRoom} className="w-full">
+            {t("common.createRoom")}
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   )
 }
