@@ -126,19 +126,19 @@ export default function Home() {
                     <div className="rounded-md bg-primary p-1 text-primary-foreground">
                       <BookOpen className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold">Project Room</h3>
+                    <h3 className="font-semibold">{t("rooms.title")}</h3>
                   </div>
                   <div className="flex-1 space-y-3">
                     <div className="h-8 bg-blue-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">Task 1</span>
+                      <span className="w-1/3">{t("room.subTasks")} 1</span>
                       <span className="ml-auto">June 15</span>
                     </div>
                     <div className="h-8 bg-green-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">Task 2</span>
+                      <span className="w-1/3">{t("room.subTasks")} 2</span>
                       <span className="ml-auto">June 22</span>
                     </div>
                     <div className="h-8 bg-yellow-100 dark:bg-gray-700 rounded-md flex items-center px-3 text-sm">
-                      <span className="w-1/3">Task 3</span>
+                      <span className="w-1/3">{t("room.subTasks")} 3</span>
                       <span className="ml-auto">June 29</span>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold tracking-tight">{t("home.keyFeatures")}</h2>
-            <p className="text-muted-foreground mt-2">{t("home.keyFeaturesSubtitle")}</p>
+            <p className="text-muted-foreground mt-2">{t("home.featuresDescription")}</p>
           </motion.div>
 
           <motion.div
@@ -180,7 +180,7 @@ export default function Home() {
                   <CardDescription>{t("home.easyTaskManagementDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.easyTaskManagementDetail")}</p>
+                  <p className="text-sm text-muted-foreground">{t("home.easyTaskManagementDetails")}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -195,7 +195,7 @@ export default function Home() {
                   <CardDescription>{t("home.simpleSharingDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.simpleSharingDetail")}</p>
+                  <p className="text-sm text-muted-foreground">{t("home.simpleSharingDetails")}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -210,7 +210,7 @@ export default function Home() {
                   <CardDescription>{t("home.progressTrackingDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{t("home.progressTrackingDetail")}</p>
+                  <p className="text-sm text-muted-foreground">{t("home.progressTrackingDetails")}</p>
                 </CardContent>
               </Card>
             </motion.div>

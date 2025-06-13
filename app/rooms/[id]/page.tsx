@@ -361,11 +361,11 @@ export default function RoomPage({ params }: { params: { id: string } }) {
                         onValueChange={(value) => setNewTaskType(value as "checkbox" | "text")}
                       >
                         <SelectTrigger className="w-[120px]">
-                          <SelectValue placeholder="Task Type" />
+                          <SelectValue placeholder={t("common.taskType")} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="checkbox">Checkbox</SelectItem>
-                          <SelectItem value="text">Text Field</SelectItem>
+                          <SelectItem value="checkbox">{t("common.checkbox")}</SelectItem>
+                          <SelectItem value="text">{t("common.textField")}</SelectItem>
                         </SelectContent>
                       </Select>
                       <Input

@@ -32,7 +32,7 @@ export default function Header() {
                 pathname === "/" ? "text-primary" : "text-muted-foreground",
               )}
             >
-              Home
+              {t("common.home")}
               {pathname === "/" && (
                 <motion.div
                   className="absolute -bottom-[21px] left-0 right-0 h-[2px] bg-primary"

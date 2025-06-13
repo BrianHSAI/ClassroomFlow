@@ -4,6 +4,7 @@ export const translations = {
   en: {
     common: {
       title: "ClassroomFlow",
+      home: "Home",
       createRoom: "Create Room",
       viewRooms: "View Rooms",
       importRoom: "Import Room",
@@ -22,6 +23,9 @@ export const translations = {
       roomImported: "Room imported successfully",
       errorImporting: "Error importing room",
       invalidFile: "The file format is invalid. Please upload a valid JSON file.",
+      taskType: "Task Type",
+      checkbox: "Checkbox",
+      textField: "Text Field",
     },
     home: {
       headline: "Simple Classroom Project Management",
@@ -29,26 +33,18 @@ export const translations = {
         "Create project rooms, assign tasks, and share with your students. Track progress and collaborate effectively.",
       createNewRoom: "Create New Room",
       keyFeatures: "Key Features",
-      keyFeaturesSubtitle: "Everything you need for classroom project management",
-
-      // Easy Task Management
+      featuresDescription: "Everything you need for classroom project management",
       easyTaskManagement: "Easy Task Management",
       easyTaskManagementDesc: "Create and organize tasks with deadlines and progress tracking",
-      easyTaskManagementDetail:
+      easyTaskManagementDetails:
         "Easily create checkbox tasks or text field tasks with character requirements. Track progress automatically.",
-
-      // Simple Sharing
       simpleSharing: "Simple Sharing",
       simpleSharingDesc: "Share project rooms with students via unique links",
-      simpleSharingDetail:
+      simpleSharingDetails:
         "Generate shareable links that give students access to view and interact with project rooms.",
-
-      // Progress Tracking
       progressTracking: "Progress Tracking",
       progressTrackingDesc: "Monitor student progress in real-time",
-      progressTrackingDetail: "See which tasks are completed and track overall progress for each project room.",
-
-      // Card descriptions
+      progressTrackingDetails: "See which tasks are completed and track overall progress for each project room.",
       importRoomDesc: "Upload a previously exported room JSON file",
       viewRoomsDesc: "Access your existing project rooms",
     },
@@ -100,6 +96,7 @@ export const translations = {
   da: {
     common: {
       title: "ClassroomFlow",
+      home: "Hjem",
       createRoom: "Opret Rum",
       viewRooms: "Se Rum",
       importRoom: "Importer Rum",
@@ -118,31 +115,27 @@ export const translations = {
       roomImported: "Rum importeret med succes",
       errorImporting: "Fejl ved import af rum",
       invalidFile: "Filformatet er ugyldigt. Upload venligst en gyldig JSON-fil.",
+      taskType: "Opgavetype",
+      checkbox: "Afkrydsningsfelt",
+      textField: "Tekstfelt",
     },
     home: {
       headline: "Simpel Projektstyring til Klasseværelset",
       subheadline: "Opret projektrum, tildel opgaver og del med dine elever. Følg fremskridt og samarbejd effektivt.",
       createNewRoom: "Opret Nyt Rum",
       keyFeatures: "Nøglefunktioner",
-      keyFeaturesSubtitle: "Alt hvad du behøver til projektstyring i klasseværelset",
-
-      // Easy Task Management
+      featuresDescription: "Alt hvad du behøver til projektstyring i klasseværelset",
       easyTaskManagement: "Nem Opgavestyring",
       easyTaskManagementDesc: "Opret og organiser opgaver med deadlines og fremskridtssporing",
-      easyTaskManagementDetail:
-        "Opret nemt afkrydsningsopgaver eller tekstfeltopgaver med tegnkrav. Spor fremskridt automatisk.",
-
-      // Simple Sharing
+      easyTaskManagementDetails:
+        "Opret nemt afkrydsningsopgaver eller tekstfeltopgaver med tegn-krav. Spor fremskridt automatisk.",
       simpleSharing: "Enkel Deling",
       simpleSharingDesc: "Del projektrum med elever via unikke links",
-      simpleSharingDetail: "Generer delbare links, der giver elever adgang til at se og interagere med projektrum.",
-
-      // Progress Tracking
+      simpleSharingDetails: "Generer delbare links, der giver elever adgang til at se og interagere med projektrum.",
       progressTracking: "Fremskridtssporing",
       progressTrackingDesc: "Overvåg elevernes fremskridt i realtid",
-      progressTrackingDetail: "Se hvilke opgaver der er fuldført, og spor det samlede fremskridt for hvert projektrum.",
-
-      // Card descriptions
+      progressTrackingDetails:
+        "Se hvilke opgaver der er fuldført, og spor det samlede fremskridt for hvert projektrum.",
       importRoomDesc: "Upload en tidligere eksporteret rum JSON-fil",
       viewRoomsDesc: "Få adgang til dine eksisterende projektrum",
     },
